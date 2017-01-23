@@ -15,6 +15,7 @@ var request = new Promise( function( resolve, reject ) {
 /* -------------------------------------------------- */
 /* DO PROGRAM */
 /* -------------------------------------------------- */
+// Call `.then()` method on `request` var. initialized above.
 request.then(
     function( response ) {
         console.log( 'INSIDE `resolve` HANDLER' );
@@ -25,3 +26,15 @@ request.then(
         console.error( error );
     }
 );
+
+
+
+// Invoke `resolve()` method on `Promise` constructor.
+//
+// Providing a 'non-Promise' value will immediately trigger the `resolve` handler
+// function in the chained `.then()` method.
+Promise.resolve( '42' )
+    .then( function( response ) {
+        console.log( 'INSIDE `Promise.resolve()` `resolve` HANDLER' );
+        console.log( response );
+    } );
