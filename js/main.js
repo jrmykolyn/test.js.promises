@@ -27,14 +27,3 @@ request.then(
     }
 );
 
-
-
-// Invoke `resolve()` method on `Promise` constructor.
-//
-// Providing a 'non-Promise' value will immediately trigger the `resolve` handler
-// function in the chained `.then()` method.
-Promise.resolve( '42' )
-    .then( function( response ) {
-        console.log( 'INSIDE `Promise.resolve()` `resolve` HANDLER' );
-        console.log( response );
-    } );
