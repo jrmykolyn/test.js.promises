@@ -16,6 +16,22 @@ Promise.resolve( myNum )
 
 
 
+var myBool = false;
+
+Promise.resolve( myBool )
+    .then(
+        function( response ) {
+            console.log( 'INSIDE `resolve` HANDLER FOR `myBool`' );
+            console.log( response );
+        },
+        function( error ) {
+            console.log( 'INSIDE `reject` HANDLER FOR `myBool`' );
+            console.log( error );
+        }
+    );
+
+
+
 var promiseWillSucceed = new Promise( function( resolve, reject ) {
     setTimeout( function() {
         resolve( 'This promise was automatically resolved from within the `executor` function.' );
