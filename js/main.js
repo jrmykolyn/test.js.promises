@@ -8,7 +8,7 @@ var request = new Promise( function( resolve, reject ) {
         } else {
             reject( 'Whoops! Looks like the request failed.' );
         }
-    }, 3000 );
+    }, 1000 );
 } );
 
 
